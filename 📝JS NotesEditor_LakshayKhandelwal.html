@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<!-- saved from url=(0028)https://jseditor.vercel.app/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="icon" href="https://jseditor.vercel.app/proEditor.png"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app"><link rel="apple-touch-icon" href="https://jseditor.vercel.app/logo192.png"><link rel="manifest" href="https://jseditor.vercel.app/manifest.json"><title>📝JS NotesEditor</title><link href="./📝JS NotesEditor_LakshayKhandelwal_files/470.02ca99af.chunk.css" rel="stylesheet"><link rel="stylesheet" type="text/css" data-name="vs/editor/editor.main" href="./📝JS NotesEditor_LakshayKhandelwal_files/editor.main.css"><link href="./📝JS NotesEditor_LakshayKhandelwal_files/main.ffb5a85c.chunk.css" rel="stylesheet"><style>.mtk100.Identifier.JsxElement.Bracket {
+    color: darkorange;
+}
+
+.mtk1000.Identifier.JsxOpeningElement.Bracket {
+    color: darkorange;
+    font-weight: bold;
+}
+
+.mtk1001.Identifier.JsxClosingElement.Bracket {
+    color: darkorange;
+    font-weight: lighter;
+}
+
+.mtk101.Identifier.JsxOpeningElement.Identifier {
+    color: royalblue;
+}
+
+.mtk102.Identifier.JsxClosingElement.Identifier {
+    color: royalblue;
+    font-weight: lighter;
+}
+
+.mtk103.Identifier.JsxAttribute.Identifier {
+    color: steelblue;
+}
+
+.mtk104.JsxElement.JsxText {
+    color: darkgoldenrod;
+}
+
+.mtk105.glyph.Identifier.JsxElement {
+    background: #61dafb;
+    opacity: 0.25;
+}
+
+/*.mtk12.Identifier.JsxExpression.JsxClosingElement {*/
+/*color: #ec5f67;*/
+/*}*/
+
+/*.mtk12.Identifier.JsxSelfClosingElement {*/
+/*color: #ec5f67;*/
+/*}*/
+/*.mtk12.Identifier.VariableStatement.JsxClosingElement {*/
+/*color: #ec5f67 !important;*/
+/*}*/
+/*.mtk12.VariableStatement.JsxSelfClosingElement.Identifier {*/
+/*color: #ec5f67;*/
+/*}*/
+/*.mtk12.Identifier.JsxAttribute.VariableDeclaration {*/
+/*color: crimson;*/
+/*}*/
+/*.mtk12.JsxExpression.VariableStatement {*/
+/*color: #fac863;*/
+/*}*/
+/*.mtk12.VariableStatement.JsxSelfClosingElement {*/
+/*color: #ede0e0;*/
+/*}*/
+/*.mtk12.VariableStatement.JsxClosingElement {*/
+/*color: #ede0e0;*/
+/*}*/
+/*.JsxText {*/
+/*color: #0c141f;*/
+/*}*/
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9zcmMvTW9uYWNvSlNYSGlnaGxpZ2h0ZXIuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksaUJBQWlCO0FBQ3JCOztBQUVBO0lBQ0ksaUJBQWlCO0lBQ2pCLGlCQUFpQjtBQUNyQjs7QUFFQTtJQUNJLGlCQUFpQjtJQUNqQixvQkFBb0I7QUFDeEI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUE7SUFDSSxnQkFBZ0I7SUFDaEIsb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksZ0JBQWdCO0FBQ3BCOztBQUVBO0lBQ0ksb0JBQW9CO0FBQ3hCOztBQUVBO0lBQ0ksbUJBQW1CO0lBQ25CLGFBQWE7QUFDakI7O0FBRUEsc0RBQXNEO0FBQ3RELGtCQUFrQjtBQUNsQixJQUFJOztBQUVKLDRDQUE0QztBQUM1QyxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLDBEQUEwRDtBQUMxRCw2QkFBNkI7QUFDN0IsSUFBSTtBQUNKLDhEQUE4RDtBQUM5RCxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLHVEQUF1RDtBQUN2RCxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLDJDQUEyQztBQUMzQyxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLG1EQUFtRDtBQUNuRCxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLCtDQUErQztBQUMvQyxrQkFBa0I7QUFDbEIsSUFBSTtBQUNKLGFBQWE7QUFDYixrQkFBa0I7QUFDbEIsSUFBSSIsInNvdXJjZXNDb250ZW50IjpbIi5tdGsxMDAuSWRlbnRpZmllci5Kc3hFbGVtZW50LkJyYWNrZXQge1xuICAgIGNvbG9yOiBkYXJrb3JhbmdlO1xufVxuXG4ubXRrMTAwMC5JZGVudGlmaWVyLkpzeE9wZW5pbmdFbGVtZW50LkJyYWNrZXQge1xuICAgIGNvbG9yOiBkYXJrb3JhbmdlO1xuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xufVxuXG4ubXRrMTAwMS5JZGVudGlmaWVyLkpzeENsb3NpbmdFbGVtZW50LkJyYWNrZXQge1xuICAgIGNvbG9yOiBkYXJrb3JhbmdlO1xuICAgIGZvbnQtd2VpZ2h0OiBsaWdodGVyO1xufVxuXG4ubXRrMTAxLklkZW50aWZpZXIuSnN4T3BlbmluZ0VsZW1lbnQuSWRlbnRpZmllciB7XG4gICAgY29sb3I6IHJveWFsYmx1ZTtcbn1cblxuLm10azEwMi5JZGVudGlmaWVyLkpzeENsb3NpbmdFbGVtZW50LklkZW50aWZpZXIge1xuICAgIGNvbG9yOiByb3lhbGJsdWU7XG4gICAgZm9udC13ZWlnaHQ6IGxpZ2h0ZXI7XG59XG5cbi5tdGsxMDMuSWRlbnRpZmllci5Kc3hBdHRyaWJ1dGUuSWRlbnRpZmllciB7XG4gICAgY29sb3I6IHN0ZWVsYmx1ZTtcbn1cblxuLm10azEwNC5Kc3hFbGVtZW50LkpzeFRleHQge1xuICAgIGNvbG9yOiBkYXJrZ29sZGVucm9kO1xufVxuXG4ubXRrMTA1LmdseXBoLklkZW50aWZpZXIuSnN4RWxlbWVudCB7XG4gICAgYmFja2dyb3VuZDogIzYxZGFmYjtcbiAgICBvcGFjaXR5OiAwLjI1O1xufVxuXG4vKi5tdGsxMi5JZGVudGlmaWVyLkpzeEV4cHJlc3Npb24uSnN4Q2xvc2luZ0VsZW1lbnQgeyovXG4vKmNvbG9yOiAjZWM1ZjY3OyovXG4vKn0qL1xuXG4vKi5tdGsxMi5JZGVudGlmaWVyLkpzeFNlbGZDbG9zaW5nRWxlbWVudCB7Ki9cbi8qY29sb3I6ICNlYzVmNjc7Ki9cbi8qfSovXG4vKi5tdGsxMi5JZGVudGlmaWVyLlZhcmlhYmxlU3RhdGVtZW50LkpzeENsb3NpbmdFbGVtZW50IHsqL1xuLypjb2xvcjogI2VjNWY2NyAhaW1wb3J0YW50OyovXG4vKn0qL1xuLyoubXRrMTIuVmFyaWFibGVTdGF0ZW1lbnQuSnN4U2VsZkNsb3NpbmdFbGVtZW50LklkZW50aWZpZXIgeyovXG4vKmNvbG9yOiAjZWM1ZjY3OyovXG4vKn0qL1xuLyoubXRrMTIuSWRlbnRpZmllci5Kc3hBdHRyaWJ1dGUuVmFyaWFibGVEZWNsYXJhdGlvbiB7Ki9cbi8qY29sb3I6IGNyaW1zb247Ki9cbi8qfSovXG4vKi5tdGsxMi5Kc3hFeHByZXNzaW9uLlZhcmlhYmxlU3RhdGVtZW50IHsqL1xuLypjb2xvcjogI2ZhYzg2MzsqL1xuLyp9Ki9cbi8qLm10azEyLlZhcmlhYmxlU3RhdGVtZW50LkpzeFNlbGZDbG9zaW5nRWxlbWVudCB7Ki9cbi8qY29sb3I6ICNlZGUwZTA7Ki9cbi8qfSovXG4vKi5tdGsxMi5WYXJpYWJsZVN0YXRlbWVudC5Kc3hDbG9zaW5nRWxlbWVudCB7Ki9cbi8qY29sb3I6ICNlZGUwZTA7Ki9cbi8qfSovXG4vKi5Kc3hUZXh0IHsqL1xuLypjb2xvcjogIzBjMTQxZjsqL1xuLyp9Ki8iXSwic291cmNlUm9vdCI6IiJ9 */</style><script async="async" type="text/javascript" src="./📝JS NotesEditor_LakshayKhandelwal_files/editor.main.js.download"></script><script async="async" type="text/javascript" src="./📝JS NotesEditor_LakshayKhandelwal_files/editor.main.nls.js.download"></script><style type="text/css" media="screen" class="monaco-colors">.codicon-add:before { content: '\ea60'; }
+.codicon-plus:before { content: '\ea60'; }
+.codicon-gist-new:before { content: '\ea60'; }
+.codicon-repo-create:before { content: '\ea60'; }
+.codicon-lightbulb:before { content: '\ea61'; }
+.codicon-light-bulb:before { content: '\ea61'; }
+.codicon-repo:before { content: '\ea62'; }
+.codicon-repo-delete:before { content: '\ea62'; }
+.codicon-gist-fork:before { content: '\ea63'; }
+.codicon-repo-forked:before { content: '\ea63'; }
+.codicon-git-pull-request:before { content: '\ea64'; }
+.codicon-git-pull-request-abandoned:before { content: '\ea64'; }
+.codicon-record-keys:before { content: '\ea65'; }
+.codicon-keyboard:before { content: '\ea65'; }
+.codicon-tag:before { content: '\ea66'; }
+.codicon-tag-add:before { content: '\ea66'; }
+.codicon-tag-remove:before { content: '\ea66'; }
+.codicon-person:before { content: '\ea67'; }
+.codicon-person-add:before { content: '\ea67'; }
+.codicon-person-follow:before { content: '\ea67'; }
+.codicon-person-outline:before { content: '\ea67'; }
+.codicon-person-filled:before { content: '\ea67'; }
+.codicon-git-branch:before { content: '\ea68'; }
+.codicon-git-branch-create:before { content: '\ea68'; }
+.codicon-git-branch-delete:before { content: '\ea68'; }
+.codicon-source-control:before { content: '\ea68'; }
+.codicon-mirror:before { content: '\ea69'; }
+.codicon-mirror-public:before { content: '\ea69'; }
+.codicon-star:before { content: '\ea6a'; }
+.codicon-star-add:before { content: '\ea6a'; }
+.codicon-star-delete:before { content: '\ea6a'; }
+.codicon-star-empty:before { content: '\ea6a'; }
+.codicon-comment:before { content: '\ea6b'; }
+.codicon-comment-add:before { content: '\ea6b'; }
+.codicon-alert:before { content: '\ea6c'; }
+.codicon-warning:before { content: '\ea6c'; }
+.codicon-search:before { content: '\ea6d'; }
+.codicon-search-save:before { content: '\ea6d'; }
+.codicon-log-out:before { content: '\ea6e'; }
+.codicon-sign-out:before { content: '\ea6e'; }
+.codicon-log-in:before { content: '\ea6f'; }
+.codicon-sign-in:before { content: '\ea6f'; }
+.codicon-eye:before { content: '\ea70'; }
+.codicon-eye-unwatch:before { content: '\ea70'; }
+.codicon-eye-watch:before { content: '\ea70'; }
+.codicon-circle-filled:before { content: '\ea71'; }
+.codicon-primitive-dot:before { content: '\ea71'; }
+.codicon-close-dirty:before { content: '\ea71'; }
+.codicon-debug-breakpoint:before { content: '\ea71'; }
+.codicon-debug-breakpoint-disabled:before { content: '\ea71'; }
+.codicon-debug-hint:before { content: '\ea71'; }
+.codicon-primitive-square:before { content: '\ea72'; }
+.codicon-edit:before { content: '\ea73'; }
+.codicon-pencil:before { content: '\ea73'; }
+.codicon-info:before { content: '\ea74'; }
+.codicon-issue-opened:before { content: '\ea74'; }
+.codicon-gist-private:before { content: '\ea75'; }
+.codicon-git-fork-private:before { content: '\ea75'; }
+.codicon-lock:before { content: '\ea75'; }
+.codicon-mirror-private:before { content: '\ea75'; }
+.codicon-close:before { content: '\ea76'; }
+.codicon-remove-close:before { content: '\ea76'; }
+.codicon-x:before { content: '\ea76'; }
+.codicon-repo-sync:before { content: '\ea77'; }
+.codicon-sync:before { content: '\ea77'; }
+.codicon-clone:before { content: '\ea78'; }
+.codicon-desktop-download:before { content: '\ea78'; }
+.codicon-beaker:before { content: '\ea79'; }
+.codicon-microscope:before { content: '\ea79'; }
+.codicon-vm:before { content: '\ea7a'; }
+.codicon-device-desktop:before { content: '\ea7a'; }
+.codicon-file:before { content: '\ea7b'; }
+.codicon-file-text:before { content: '\ea7b'; }
+.codicon-more:before { content: '\ea7c'; }
+.codicon-ellipsis:before { content: '\ea7c'; }
+.codicon-kebab-horizontal:before { content: '\ea7c'; }
+.codicon-mail-reply:before { content: '\ea7d'; }
+.codicon-reply:before { content: '\ea7d'; }
+.codicon-organization:before { content: '\ea7e'; }
+.codicon-organization-filled:before { content: '\ea7e'; }
+.codicon-organization-outline:before { content: '\ea7e'; }
+.codicon-new-file:before { content: '\ea7f'; }
+.codicon-file-add:before { content: '\ea7f'; }
+.codicon-new-folder:before { content: '\ea80'; }
+.codicon-file-directory-create:before { content: '\ea80'; }
+.codicon-trash:before { content: '\ea81'; }
+.codicon-trashcan:before { content: '\ea81'; }
+.codicon-history:before { content: '\ea82'; }
+.codicon-clock:before { content: '\ea82'; }
+.codicon-folder:before { content: '\ea83'; }
+.codicon-file-directory:before { content: '\ea83'; }
+.codicon-symbol-folder:before { content: '\ea83'; }
+.codicon-logo-github:before { content: '\ea84'; }
+.codicon-mark-github:before { content: '\ea84'; }
+.codicon-github:before { content: '\ea84'; }
+.codicon-terminal:before { content: '\ea85'; }
+.codicon-console:before { content: '\ea85'; }
+.codicon-repl:before { content: '\ea85'; }
+.codicon-zap:before { content: '\ea86'; }
+.codicon-symbol-event:before { content: '\ea86'; }
+.codicon-error:before { content: '\ea87'; }
+.codicon-stop:before { content: '\ea87'; }
+.codicon-variable:before { content: '\ea88'; }
+.codicon-symbol-variable:before { content: '\ea88'; }
+.codicon-array:before { content: '\ea8a'; }
+.codicon-symbol-array:before { content: '\ea8a'; }
+.codicon-symbol-module:before { content: '\ea8b'; }
+.codicon-symbol-package:before { content: '\ea8b'; }
+.codicon-symbol-namespace:before { content: '\ea8b'; }
+.codicon-symbol-object:before { content: '\ea8b'; }
+.codicon-symbol-method:before { content: '\ea8c'; }
+.codicon-symbol-function:before { content: '\ea8c'; }
+.codicon-symbol-constructor:before { content: '\ea8c'; }
+.codicon-symbol-boolean:before { content: '\ea8f'; }
+.codicon-symbol-null:before { content: '\ea8f'; }
+.codicon-symbol-numeric:before { content: '\ea90'; }
+.codicon-symbol-number:before { content: '\ea90'; }
+.codicon-symbol-structure:before { content: '\ea91'; }
+.codicon-symbol-struct:before { content: '\ea91'; }
+.codicon-symbol-parameter:before { content: '\ea92'; }
+.codicon-symbol-type-parameter:before { content: '\ea92'; }
+.codicon-symbol-key:before { content: '\ea93'; }
+.codicon-symbol-text:before { content: '\ea93'; }
+.codicon-symbol-reference:before { content: '\ea94'; }
+.codicon-go-to-file:before { content: '\ea94'; }
+.codicon-symbol-enum:before { content: '\ea95'; }
+.codicon-symbol-value:before { content: '\ea95'; }
+.codicon-symbol-ruler:before { content: '\ea96'; }
+.codicon-symbol-unit:before { content: '\ea96'; }
+.codicon-activate-breakpoints:before { content: '\ea97'; }
+.codicon-archive:before { content: '\ea98'; }
+.codicon-arrow-both:before { content: '\ea99'; }
+.codicon-arrow-down:before { content: '\ea9a'; }
+.codicon-arrow-left:before { content: '\ea9b'; }
+.codicon-arrow-right:before { content: '\ea9c'; }
+.codicon-arrow-small-down:before { content: '\ea9d'; }
+.codicon-arrow-small-left:before { content: '\ea9e'; }
+.codicon-arrow-small-right:before { content: '\ea9f'; }
+.codicon-arrow-small-up:before { content: '\eaa0'; }
+.codicon-arrow-up:before { content: '\eaa1'; }
+.codicon-bell:before { content: '\eaa2'; }
+.codicon-bold:before { content: '\eaa3'; }
+.codicon-book:before { content: '\eaa4'; }
+.codicon-bookmark:before { content: '\eaa5'; }
+.codicon-debug-breakpoint-conditional-unverified:before { content: '\eaa6'; }
+.codicon-debug-breakpoint-conditional:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-conditional-disabled:before { content: '\eaa7'; }
+.codicon-debug-breakpoint-data-unverified:before { content: '\eaa8'; }
+.codicon-debug-breakpoint-data:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-data-disabled:before { content: '\eaa9'; }
+.codicon-debug-breakpoint-log-unverified:before { content: '\eaaa'; }
+.codicon-debug-breakpoint-log:before { content: '\eaab'; }
+.codicon-debug-breakpoint-log-disabled:before { content: '\eaab'; }
+.codicon-briefcase:before { content: '\eaac'; }
+.codicon-broadcast:before { content: '\eaad'; }
+.codicon-browser:before { content: '\eaae'; }
+.codicon-bug:before { content: '\eaaf'; }
+.codicon-calendar:before { content: '\eab0'; }
+.codicon-case-sensitive:before { content: '\eab1'; }
+.codicon-check:before { content: '\eab2'; }
+.codicon-checklist:before { content: '\eab3'; }
+.codicon-chevron-down:before { content: '\eab4'; }
+.codicon-chevron-left:before { content: '\eab5'; }
+.codicon-chevron-right:before { content: '\eab6'; }
+.codicon-chevron-up:before { content: '\eab7'; }
+.codicon-chrome-close:before { content: '\eab8'; }
+.codicon-chrome-maximize:before { content: '\eab9'; }
+.codicon-chrome-minimize:before { content: '\eaba'; }
+.codicon-chrome-restore:before { content: '\eabb'; }
+.codicon-circle-outline:before { content: '\eabc'; }
+.codicon-debug-breakpoint-unverified:before { content: '\eabc'; }
+.codicon-circle-slash:before { content: '\eabd'; }
+.codicon-circuit-board:before { content: '\eabe'; }
+.codicon-clear-all:before { content: '\eabf'; }
+.codicon-clippy:before { content: '\eac0'; }
+.codicon-close-all:before { content: '\eac1'; }
+.codicon-cloud-download:before { content: '\eac2'; }
+.codicon-cloud-upload:before { content: '\eac3'; }
+.codicon-code:before { content: '\eac4'; }
+.codicon-collapse-all:before { content: '\eac5'; }
+.codicon-color-mode:before { content: '\eac6'; }
+.codicon-comment-discussion:before { content: '\eac7'; }
+.codicon-compare-changes:before { content: '\eafd'; }
+.codicon-credit-card:before { content: '\eac9'; }
+.codicon-dash:before { content: '\eacc'; }
+.codicon-dashboard:before { content: '\eacd'; }
+.codicon-database:before { content: '\eace'; }
+.codicon-debug-continue:before { content: '\eacf'; }
+.codicon-debug-disconnect:before { content: '\ead0'; }
+.codicon-debug-pause:before { content: '\ead1'; }
+.codicon-debug-restart:before { content: '\ead2'; }
+.codicon-debug-start:before { content: '\ead3'; }
+.codicon-debug-step-into:before { content: '\ead4'; }
+.codicon-debug-step-out:before { content: '\ead5'; }
+.codicon-debug-step-over:before { content: '\ead6'; }
+.codicon-debug-stop:before { content: '\ead7'; }
+.codicon-debug:before { content: '\ead8'; }
+.codicon-device-camera-video:before { content: '\ead9'; }
+.codicon-device-camera:before { content: '\eada'; }
+.codicon-device-mobile:before { content: '\eadb'; }
+.codicon-diff-added:before { content: '\eadc'; }
+.codicon-diff-ignored:before { content: '\eadd'; }
+.codicon-diff-modified:before { content: '\eade'; }
+.codicon-diff-removed:before { content: '\eadf'; }
+.codicon-diff-renamed:before { content: '\eae0'; }
+.codicon-diff:before { content: '\eae1'; }
+.codicon-discard:before { content: '\eae2'; }
+.codicon-editor-layout:before { content: '\eae3'; }
+.codicon-empty-window:before { content: '\eae4'; }
+.codicon-exclude:before { content: '\eae5'; }
+.codicon-extensions:before { content: '\eae6'; }
+.codicon-eye-closed:before { content: '\eae7'; }
+.codicon-file-binary:before { content: '\eae8'; }
+.codicon-file-code:before { content: '\eae9'; }
+.codicon-file-media:before { content: '\eaea'; }
+.codicon-file-pdf:before { content: '\eaeb'; }
+.codicon-file-submodule:before { content: '\eaec'; }
+.codicon-file-symlink-directory:before { content: '\eaed'; }
+.codicon-file-symlink-file:before { content: '\eaee'; }
+.codicon-file-zip:before { content: '\eaef'; }
+.codicon-files:before { content: '\eaf0'; }
+.codicon-filter:before { content: '\eaf1'; }
+.codicon-flame:before { content: '\eaf2'; }
+.codicon-fold-down:before { content: '\eaf3'; }
+.codicon-fold-up:before { content: '\eaf4'; }
+.codicon-fold:before { content: '\eaf5'; }
+.codicon-folder-active:before { content: '\eaf6'; }
+.codicon-folder-opened:before { content: '\eaf7'; }
+.codicon-gear:before { content: '\eaf8'; }
+.codicon-gift:before { content: '\eaf9'; }
+.codicon-gist-secret:before { content: '\eafa'; }
+.codicon-gist:before { content: '\eafb'; }
+.codicon-git-commit:before { content: '\eafc'; }
+.codicon-git-compare:before { content: '\eafd'; }
+.codicon-git-merge:before { content: '\eafe'; }
+.codicon-github-action:before { content: '\eaff'; }
+.codicon-github-alt:before { content: '\eb00'; }
+.codicon-globe:before { content: '\eb01'; }
+.codicon-grabber:before { content: '\eb02'; }
+.codicon-graph:before { content: '\eb03'; }
+.codicon-gripper:before { content: '\eb04'; }
+.codicon-heart:before { content: '\eb05'; }
+.codicon-home:before { content: '\eb06'; }
+.codicon-horizontal-rule:before { content: '\eb07'; }
+.codicon-hubot:before { content: '\eb08'; }
+.codicon-inbox:before { content: '\eb09'; }
+.codicon-issue-closed:before { content: '\eb0a'; }
+.codicon-issue-reopened:before { content: '\eb0b'; }
+.codicon-issues:before { content: '\eb0c'; }
+.codicon-italic:before { content: '\eb0d'; }
+.codicon-jersey:before { content: '\eb0e'; }
+.codicon-json:before { content: '\eb0f'; }
+.codicon-kebab-vertical:before { content: '\eb10'; }
+.codicon-key:before { content: '\eb11'; }
+.codicon-law:before { content: '\eb12'; }
+.codicon-lightbulb-autofix:before { content: '\eb13'; }
+.codicon-link-external:before { content: '\eb14'; }
+.codicon-link:before { content: '\eb15'; }
+.codicon-list-ordered:before { content: '\eb16'; }
+.codicon-list-unordered:before { content: '\eb17'; }
+.codicon-live-share:before { content: '\eb18'; }
+.codicon-loading:before { content: '\eb19'; }
+.codicon-location:before { content: '\eb1a'; }
+.codicon-mail-read:before { content: '\eb1b'; }
+.codicon-mail:before { content: '\eb1c'; }
+.codicon-markdown:before { content: '\eb1d'; }
+.codicon-megaphone:before { content: '\eb1e'; }
+.codicon-mention:before { content: '\eb1f'; }
+.codicon-milestone:before { content: '\eb20'; }
+.codicon-mortar-board:before { content: '\eb21'; }
+.codicon-move:before { content: '\eb22'; }
+.codicon-multiple-windows:before { content: '\eb23'; }
+.codicon-mute:before { content: '\eb24'; }
+.codicon-no-newline:before { content: '\eb25'; }
+.codicon-note:before { content: '\eb26'; }
+.codicon-octoface:before { content: '\eb27'; }
+.codicon-open-preview:before { content: '\eb28'; }
+.codicon-package:before { content: '\eb29'; }
+.codicon-paintcan:before { content: '\eb2a'; }
+.codicon-pin:before { content: '\eb2b'; }
+.codicon-play:before { content: '\eb2c'; }
+.codicon-run:before { content: '\eb2c'; }
+.codicon-plug:before { content: '\eb2d'; }
+.codicon-preserve-case:before { content: '\eb2e'; }
+.codicon-preview:before { content: '\eb2f'; }
+.codicon-project:before { content: '\eb30'; }
+.codicon-pulse:before { content: '\eb31'; }
+.codicon-question:before { content: '\eb32'; }
+.codicon-quote:before { content: '\eb33'; }
+.codicon-radio-tower:before { content: '\eb34'; }
+.codicon-reactions:before { content: '\eb35'; }
+.codicon-references:before { content: '\eb36'; }
+.codicon-refresh:before { content: '\eb37'; }
+.codicon-regex:before { content: '\eb38'; }
+.codicon-remote-explorer:before { content: '\eb39'; }
+.codicon-remote:before { content: '\eb3a'; }
+.codicon-remove:before { content: '\eb3b'; }
+.codicon-replace-all:before { content: '\eb3c'; }
+.codicon-replace:before { content: '\eb3d'; }
+.codicon-repo-clone:before { content: '\eb3e'; }
+.codicon-repo-force-push:before { content: '\eb3f'; }
+.codicon-repo-pull:before { content: '\eb40'; }
+.codicon-repo-push:before { content: '\eb41'; }
+.codicon-report:before { content: '\eb42'; }
+.codicon-request-changes:before { content: '\eb43'; }
+.codicon-rocket:before { content: '\eb44'; }
+.codicon-root-folder-opened:before { content: '\eb45'; }
+.codicon-root-folder:before { content: '\eb46'; }
+.codicon-rss:before { content: '\eb47'; }
+.codicon-ruby:before { content: '\eb48'; }
+.codicon-save-all:before { content: '\eb49'; }
+.codicon-save-as:before { content: '\eb4a'; }
+.codicon-save:before { content: '\eb4b'; }
+.codicon-screen-full:before { content: '\eb4c'; }
+.codicon-screen-normal:before { content: '\eb4d'; }
+.codicon-search-stop:before { content: '\eb4e'; }
+.codicon-server:before { content: '\eb50'; }
+.codicon-settings-gear:before { content: '\eb51'; }
+.codicon-settings:before { content: '\eb52'; }
+.codicon-shield:before { content: '\eb53'; }
+.codicon-smiley:before { content: '\eb54'; }
+.codicon-sort-precedence:before { content: '\eb55'; }
+.codicon-split-horizontal:before { content: '\eb56'; }
+.codicon-split-vertical:before { content: '\eb57'; }
+.codicon-squirrel:before { content: '\eb58'; }
+.codicon-star-full:before { content: '\eb59'; }
+.codicon-star-half:before { content: '\eb5a'; }
+.codicon-symbol-class:before { content: '\eb5b'; }
+.codicon-symbol-color:before { content: '\eb5c'; }
+.codicon-symbol-constant:before { content: '\eb5d'; }
+.codicon-symbol-enum-member:before { content: '\eb5e'; }
+.codicon-symbol-field:before { content: '\eb5f'; }
+.codicon-symbol-file:before { content: '\eb60'; }
+.codicon-symbol-interface:before { content: '\eb61'; }
+.codicon-symbol-keyword:before { content: '\eb62'; }
+.codicon-symbol-misc:before { content: '\eb63'; }
+.codicon-symbol-operator:before { content: '\eb64'; }
+.codicon-symbol-property:before { content: '\eb65'; }
+.codicon-wrench:before { content: '\eb65'; }
+.codicon-wrench-subaction:before { content: '\eb65'; }
+.codicon-symbol-snippet:before { content: '\eb66'; }
+.codicon-tasklist:before { content: '\eb67'; }
+.codicon-telescope:before { content: '\eb68'; }
+.codicon-text-size:before { content: '\eb69'; }
+.codicon-three-bars:before { content: '\eb6a'; }
+.codicon-thumbsdown:before { content: '\eb6b'; }
+.codicon-thumbsup:before { content: '\eb6c'; }
+.codicon-tools:before { content: '\eb6d'; }
+.codicon-triangle-down:before { content: '\eb6e'; }
+.codicon-triangle-left:before { content: '\eb6f'; }
+.codicon-triangle-right:before { content: '\eb70'; }
+.codicon-triangle-up:before { content: '\eb71'; }
+.codicon-twitter:before { content: '\eb72'; }
+.codicon-unfold:before { content: '\eb73'; }
+.codicon-unlock:before { content: '\eb74'; }
+.codicon-unmute:before { content: '\eb75'; }
+.codicon-unverified:before { content: '\eb76'; }
+.codicon-verified:before { content: '\eb77'; }
+.codicon-versions:before { content: '\eb78'; }
+.codicon-vm-active:before { content: '\eb79'; }
+.codicon-vm-outline:before { content: '\eb7a'; }
+.codicon-vm-running:before { content: '\eb7b'; }
+.codicon-watch:before { content: '\eb7c'; }
+.codicon-whitespace:before { content: '\eb7d'; }
+.codicon-whole-word:before { content: '\eb7e'; }
+.codicon-window:before { content: '\eb7f'; }
+.codicon-word-wrap:before { content: '\eb80'; }
+.codicon-zoom-in:before { content: '\eb81'; }
+.codicon-zoom-out:before { content: '\eb82'; }
+.codicon-list-filter:before { content: '\eb83'; }
+.codicon-list-flat:before { content: '\eb84'; }
+.codicon-list-selection:before { content: '\eb85'; }
+.codicon-selection:before { content: '\eb85'; }
+.codicon-list-tree:before { content: '\eb86'; }
+.codicon-debug-breakpoint-function-unverified:before { content: '\eb87'; }
+.codicon-debug-breakpoint-function:before { content: '\eb88'; }
+.codicon-debug-breakpoint-function-disabled:before { content: '\eb88'; }
+.codicon-debug-stackframe-active:before { content: '\eb89'; }
+.codicon-debug-stackframe-dot:before { content: '\eb8a'; }
+.codicon-debug-stackframe:before { content: '\eb8b'; }
+.codicon-debug-stackframe-focused:before { content: '\eb8b'; }
+.codicon-debug-breakpoint-unsupported:before { content: '\eb8c'; }
+.codicon-symbol-string:before { content: '\eb8d'; }
+.codicon-debug-reverse-continue:before { content: '\eb8e'; }
+.codicon-debug-step-back:before { content: '\eb8f'; }
+.codicon-debug-restart-frame:before { content: '\eb90'; }
+.codicon-call-incoming:before { content: '\eb92'; }
+.codicon-call-outgoing:before { content: '\eb93'; }
+.codicon-menu:before { content: '\eb94'; }
+.codicon-expand-all:before { content: '\eb95'; }
+.codicon-feedback:before { content: '\eb96'; }
+.codicon-group-by-ref-type:before { content: '\eb97'; }
+.codicon-ungroup-by-ref-type:before { content: '\eb98'; }
+.codicon-account:before { content: '\eb99'; }
+.codicon-bell-dot:before { content: '\eb9a'; }
+.codicon-debug-console:before { content: '\eb9b'; }
+.codicon-library:before { content: '\eb9c'; }
+.codicon-output:before { content: '\eb9d'; }
+.codicon-run-all:before { content: '\eb9e'; }
+.codicon-sync-ignored:before { content: '\eb9f'; }
+.codicon-pinned:before { content: '\eba0'; }
+.codicon-github-inverted:before { content: '\eba1'; }
+.codicon-debug-alt:before { content: '\eb91'; }
+.codicon-server-process:before { content: '\eba2'; }
+.codicon-server-environment:before { content: '\eba3'; }
+.codicon-pass:before { content: '\eba4'; }
+.codicon-stop-circle:before { content: '\eba5'; }
+.codicon-play-circle:before { content: '\eba6'; }
+.codicon-record:before { content: '\eba7'; }
+.codicon-debug-alt-small:before { content: '\eba8'; }
+.codicon-vm-connect:before { content: '\eba9'; }
+.codicon-cloud:before { content: '\ebaa'; }
+.codicon-merge:before { content: '\ebab'; }
+.codicon-scrollbar-button-left:before { content: '\eb6f'; }
+.codicon-scrollbar-button-right:before { content: '\eb70'; }
+.codicon-scrollbar-button-up:before { content: '\eb71'; }
+.codicon-scrollbar-button-down:before { content: '\eb6e'; }
+.codicon-tree-item-expanded:before { content: '\eab4'; }
+.codicon-tree-filter-on-type-on:before { content: '\eb83'; }
+.codicon-tree-filter-on-type-off:before { content: '\eb85'; }
+.codicon-tree-filter-clear:before { content: '\ea76'; }
+.codicon-tree-item-loading:before { content: '\eb19'; }
+.codicon-menu-selection:before { content: '\eab2'; }
+.codicon-menu-submenu:before { content: '\eab6'; }
+.codicon-quick-input-back:before { content: '\ea9b'; }
+.codicon-folding-expanded:before { content: '\eab4'; }
+.codicon-folding-collapsed:before { content: '\eab6'; }
+.codicon-diff-review-insert:before { content: '\ea60'; }
+.codicon-diff-review-remove:before { content: '\eb3b'; }
+.codicon-diff-review-close:before { content: '\ea76'; }
+.codicon-diff-insert:before { content: '\ea60'; }
+.codicon-diff-remove:before { content: '\eb3b'; }
+.codicon-find-selection:before { content: '\eb85'; }
+.codicon-find-collapsed:before { content: '\eab6'; }
+.codicon-find-expanded:before { content: '\eab4'; }
+.codicon-find-close:before { content: '\ea76'; }
+.codicon-find-replace:before { content: '\eb3d'; }
+.codicon-find-replace-all:before { content: '\eb3c'; }
+.codicon-find-previous-match:before { content: '\eaa1'; }
+.codicon-find-next-match:before { content: '\ea9a'; }
+.codicon-parameter-hints-next:before { content: '\eab4'; }
+.codicon-parameter-hints-previous:before { content: '\eab7'; }
+.codicon-suggest-more-info:before { content: '\eab6'; }
+.codicon-marker-navigation-next:before { content: '\eab4'; }
+.codicon-marker-navigation-previous:before { content: '\eab7'; }
+.monaco-editor .minimap-slider .minimap-slider-horizontal { background: rgba(121, 121, 121, 0.2); }
+.monaco-editor .minimap-slider:hover .minimap-slider-horizontal { background: rgba(100, 100, 100, 0.35); }
+.monaco-editor .minimap-slider.active .minimap-slider-horizontal { background: rgba(191, 191, 191, 0.2); }
+.monaco-editor .minimap-shadow-visible { box-shadow: #000000 -6px 0 6px -6px inset; }
+.monaco-editor .scroll-decoration { box-shadow: #000000 0 6px 6px -6px inset; }
+.monaco-editor .focused .selected-text { background-color: #264f78; }
+.monaco-editor .selected-text { background-color: #3a3d41; }
+.monaco-editor, .monaco-editor-background, .monaco-editor .inputarea.ime-input { background-color: #202124; }
+.monaco-editor, .monaco-editor .inputarea.ime-input { color: #d4d4d4; }
+.monaco-editor .margin { background-color: #202124; }
+.monaco-editor .rangeHighlight { background-color: rgba(255, 255, 255, 0.04); }
+.monaco-editor .symbolHighlight { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .mtkw { color: rgba(227, 228, 226, 0.16) !important; }
+.monaco-editor .mtkz { color: rgba(227, 228, 226, 0.16) !important; }
+.monaco-editor .view-overlays .current-line { border: 2px solid #282828; }
+.monaco-editor .margin-view-overlays .current-line-margin { border: 2px solid #282828; }
+.monaco-editor .lines-content .cigr { box-shadow: 1px 0 0 0 #404040 inset; }
+.monaco-editor .lines-content .cigra { box-shadow: 1px 0 0 0 #707070 inset; }
+.monaco-editor .line-numbers { color: #858585; }
+.monaco-editor .current-line ~ .line-numbers { color: #c6c6c6; }
+.monaco-editor .view-ruler { box-shadow: 1px 0 0 0 #5a5a5a inset; }
+.monaco-editor .cursors-layer .cursor { background-color: #aeafad; border-color: #aeafad; color: #515052; }
+.monaco-editor.vs .valueSetReplacement { outline: solid 2px #888888; }
+.monaco-editor .squiggly-error { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23f48771'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-warning { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%23cca700'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-info { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%206%203'%20enable-background%3D'new%200%200%206%203'%20height%3D'3'%20width%3D'6'%3E%3Cg%20fill%3D'%2375beff'%3E%3Cpolygon%20points%3D'5.5%2C0%202.5%2C3%201.1%2C3%204.1%2C0'%2F%3E%3Cpolygon%20points%3D'4%2C0%206%2C2%206%2C0.6%205.4%2C0'%2F%3E%3Cpolygon%20points%3D'0%2C2%201%2C3%202.4%2C3%200%2C0.6'%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") repeat-x bottom left; }
+.monaco-editor .squiggly-hint { background: url("data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20height%3D%223%22%20width%3D%2212%22%3E%3Cg%20fill%3D%22rgba(238%2C%20238%2C%20238%2C%200.7)%22%3E%3Ccircle%20cx%3D%221%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%225%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3Ccircle%20cx%3D%229%22%20cy%3D%221%22%20r%3D%221%22%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E") no-repeat bottom left; }
+.monaco-editor.showUnused .squiggly-inline-unnecessary { opacity: 0.667; }
+.monaco-editor.showDeprecated .squiggly-inline-deprecated { text-decoration: line-through; text-decoration-color: #d4d4d4}
+.monaco-diff-editor .diff-review-line-number { color: #858585; }
+.monaco-diff-editor .diff-review-shadow { box-shadow: #000000 0 -6px 6px -6px inset; }
+.monaco-editor .line-insert, .monaco-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-diff-editor .line-insert, .monaco-diff-editor .char-insert { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .inline-added-margin-view-zone { background-color: rgba(155, 185, 85, 0.2); }
+.monaco-editor .line-delete, .monaco-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor .line-delete, .monaco-diff-editor .char-delete { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-editor .inline-deleted-margin-view-zone { background-color: rgba(255, 0, 0, 0.2); }
+.monaco-diff-editor.side-by-side .editor.modified { box-shadow: -6px 0 5px -5px #000000; }
+
+			.monaco-diff-editor .diffViewport {
+				background: rgba(121, 121, 121, 0.4);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:hover {
+				background: rgba(100, 100, 100, 0.7);
+			}
+		
+
+			.monaco-diff-editor .diffViewport:active {
+				background: rgba(191, 191, 191, 0.4);
+			}
+		
+
+	.monaco-editor .diagonal-fill {
+		background-image: linear-gradient(
+			-45deg,
+			rgba(204, 204, 204, 0.2) 12.5%,
+			#0000 12.5%, #0000 50%,
+			rgba(204, 204, 204, 0.2) 50%, rgba(204, 204, 204, 0.2) 62.5%,
+			#0000 62.5%, #0000 100%
+		);
+		background-size: 8px 8px;
+	}
+	
+.monaco-editor .bracket-match { background-color: rgba(0, 100, 0, 0.1); }
+.monaco-editor .bracket-match { border: 1px solid #888888; }
+
+		.monaco-editor .contentWidgets .codicon.codicon-light-bulb {
+			color: #ffcc00;
+		}
+
+		.monaco-editor .contentWidgets .codicon.codicon-lightbulb-autofix {
+			color: #75beff;
+		}
+.monaco-editor .codelens-decoration { color: #999999; }
+.monaco-editor .codelens-decoration .codicon { color: #999999; }
+.monaco-editor .codelens-decoration > a:hover { color: #4e94ce !important; }
+.monaco-editor .codelens-decoration > a:hover .codicon { color: #4e94ce !important; }
+.codicon.codicon-symbol-array { color: #cccccc; }
+.codicon.codicon-symbol-boolean { color: #cccccc; }
+.codicon.codicon-symbol-class { color: #ee9d28; }
+.codicon.codicon-symbol-method { color: #b180d7; }
+.codicon.codicon-symbol-color { color: #cccccc; }
+.codicon.codicon-symbol-constant { color: #cccccc; }
+.codicon.codicon-symbol-constructor { color: #b180d7; }
+
+			.codicon.codicon-symbol-value,.codicon.codicon-symbol-enum { color: #ee9d28; }
+.codicon.codicon-symbol-enum-member { color: #75beff; }
+.codicon.codicon-symbol-event { color: #ee9d28; }
+.codicon.codicon-symbol-field { color: #75beff; }
+.codicon.codicon-symbol-file { color: #cccccc; }
+.codicon.codicon-symbol-folder { color: #cccccc; }
+.codicon.codicon-symbol-function { color: #b180d7; }
+.codicon.codicon-symbol-interface { color: #75beff; }
+.codicon.codicon-symbol-key { color: #cccccc; }
+.codicon.codicon-symbol-keyword { color: #cccccc; }
+.codicon.codicon-symbol-module { color: #cccccc; }
+.codicon.codicon-symbol-namespace { color: #cccccc; }
+.codicon.codicon-symbol-null { color: #cccccc; }
+.codicon.codicon-symbol-number { color: #cccccc; }
+.codicon.codicon-symbol-object { color: #cccccc; }
+.codicon.codicon-symbol-operator { color: #cccccc; }
+.codicon.codicon-symbol-package { color: #cccccc; }
+.codicon.codicon-symbol-property { color: #cccccc; }
+.codicon.codicon-symbol-reference { color: #cccccc; }
+.codicon.codicon-symbol-snippet { color: #cccccc; }
+.codicon.codicon-symbol-string { color: #cccccc; }
+.codicon.codicon-symbol-struct { color: #cccccc; }
+.codicon.codicon-symbol-text { color: #cccccc; }
+.codicon.codicon-symbol-type-parameter { color: #cccccc; }
+.codicon.codicon-symbol-unit { color: #cccccc; }
+.codicon.codicon-symbol-variable { color: #75beff; }
+.monaco-editor .findOptionsWidget { background-color: #252526; }
+.monaco-editor .findOptionsWidget { color: #cccccc; }
+.monaco-editor .findOptionsWidget { box-shadow: 0 2px 8px #000000; }
+.monaco-editor .findMatch { background-color: rgba(234, 92, 0, 0.33); }
+.monaco-editor .currentFindMatch { background-color: #515c6a; }
+.monaco-editor .findScope { background-color: rgba(58, 61, 65, 0.4); }
+.monaco-editor .find-widget { background-color: #252526; }
+.monaco-editor .find-widget { box-shadow: 0 2px 8px #000000; }
+.monaco-editor .find-widget { color: #cccccc; }
+.monaco-editor .find-widget.no-results .matchesCount { color: #f48771; }
+.monaco-editor .find-widget .monaco-sash { background-color: #454545; }
+.monaco-editor .find-widget .monaco-inputbox.synthetic-focus { outline-color: #007fd4; }
+.monaco-editor .folded-background { background-color: rgba(38, 79, 120, 0.3); }
+
+		.monaco-editor .cldr.codicon.codicon-folding-expanded,
+		.monaco-editor .cldr.codicon.codicon-folding-collapsed {
+			color: #c5c5c5 !important;
+		}
+		
+.monaco-editor .detected-link-active { color: #4e94ce !important; }
+.monaco-editor .monaco-editor-overlaymessage .anchor { border-top-color: #007acc; }
+.monaco-editor .monaco-editor-overlaymessage .message { border: 1px solid #007acc; }
+.monaco-editor .monaco-editor-overlaymessage .message { background-color: #063b49; }
+.monaco-editor .parameter-hints-widget { border: 1px solid #454545; }
+.monaco-editor .parameter-hints-widget.multiple .body { border-left: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .parameter-hints-widget .signature.has-docs { border-bottom: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .parameter-hints-widget { background-color: #252526; }
+.monaco-editor .parameter-hints-widget a { color: #3794ff; }
+.monaco-editor .parameter-hints-widget { color: #cccccc; }
+.monaco-editor .parameter-hints-widget code { background-color: rgba(10, 10, 10, 0.4); }
+.monaco-editor .on-type-rename-decoration { background: rgba(255, 0, 0, 0.3); border-left-color: rgba(255, 0, 0, 0.3); }
+.monaco-editor .suggest-widget .monaco-list .monaco-list-row .monaco-highlighted-label .highlight { color: #0097fb; }
+.monaco-editor .suggest-widget { color: #d4d4d4; }
+.monaco-editor .suggest-widget a { color: #3794ff; }
+.monaco-editor .suggest-widget code { background-color: rgba(10, 10, 10, 0.4); }
+.monaco-editor .focused .selectionHighlight { background-color: rgba(173, 214, 255, 0.15); }
+.monaco-editor .selectionHighlight { background-color: rgba(173, 214, 255, 0.07); }
+.monaco-editor .wordHighlight { background-color: rgba(87, 87, 87, 0.72); }
+.monaco-editor .wordHighlightStrong { background-color: rgba(0, 73, 114, 0.72); }
+.monaco-editor .accessibilityHelpWidget { background-color: #252526; }
+.monaco-editor .accessibilityHelpWidget { color: #cccccc; }
+.monaco-editor .accessibilityHelpWidget { box-shadow: 0 2px 8px #000000; }
+.monaco-editor .tokens-inspect-widget { border: 1px solid #454545; }
+.monaco-editor .tokens-inspect-widget .tokens-inspect-separator { background-color: #454545; }
+.monaco-editor .tokens-inspect-widget { background-color: #252526; }
+.monaco-editor .tokens-inspect-widget { color: #cccccc; }
+
+			.monaco-editor .zone-widget .codicon.codicon-error,
+			.markers-panel .marker-icon.codicon.codicon-error,
+			.extensions-viewlet > .extensions .codicon.codicon-error {
+				color: #f48771;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-warning,
+			.markers-panel .marker-icon.codicon.codicon-warning,
+			.extensions-viewlet > .extensions .codicon.codicon-warning,
+			.extension-editor .codicon.codicon-warning {
+				color: #cca700;
+			}
+		
+
+			.monaco-editor .zone-widget .codicon.codicon-info,
+			.markers-panel .marker-icon.codicon.codicon-info,
+			.extensions-viewlet > .extensions .codicon.codicon-info,
+			.extension-editor .codicon.codicon-info {
+				color: #75beff;
+			}
+		
+.monaco-editor .marker-widget a { color: #3794ff; }
+.monaco-editor .marker-widget a.code-link span:hover { color: #3794ff; }
+.monaco-hover .hover-contents a.code-link span:hover { color: #3794ff; }
+.monaco-editor .reference-zone-widget .ref-tree .referenceMatch .highlight { background-color: rgba(234, 92, 0, 0.3); }
+.monaco-editor .reference-zone-widget .preview .reference-decoration { background-color: rgba(255, 143, 0, 0.6); }
+.monaco-editor .reference-zone-widget .ref-tree { background-color: #252526; }
+.monaco-editor .reference-zone-widget .ref-tree { color: #bbbbbb; }
+.monaco-editor .reference-zone-widget .ref-tree .reference-file { color: #ffffff; }
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .monaco-list-rows > .monaco-list-row.selected:not(.highlighted) { background-color: rgba(51, 153, 255, 0.2); }
+.monaco-editor .reference-zone-widget .ref-tree .monaco-list:focus .monaco-list-rows > .monaco-list-row.selected:not(.highlighted) { color: #ffffff !important; }
+.monaco-editor .reference-zone-widget .preview .monaco-editor .monaco-editor-background,.monaco-editor .reference-zone-widget .preview .monaco-editor .inputarea.ime-input {	background-color: #001f33;}
+.monaco-editor .reference-zone-widget .preview .monaco-editor .margin {	background-color: #001f33;}
+.monaco-editor .goto-definition-link { color: #4e94ce !important; }
+.monaco-editor .hoverHighlight { background-color: rgba(38, 79, 120, 0.25); }
+.monaco-editor .monaco-hover { background-color: #252526; }
+.monaco-editor .monaco-hover { border: 1px solid #454545; }
+.monaco-editor .monaco-hover .hover-row:not(:first-child):not(:empty) { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .monaco-hover hr { border-top: 1px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .monaco-hover hr { border-bottom: 0px solid rgba(69, 69, 69, 0.5); }
+.monaco-editor .monaco-hover a { color: #3794ff; }
+.monaco-editor .monaco-hover { color: #cccccc; }
+.monaco-editor .monaco-hover .hover-row .actions { background-color: #2c2c2d; }
+.monaco-editor .monaco-hover code { background-color: rgba(10, 10, 10, 0.4); }
+.monaco-editor .snippet-placeholder { background-color: rgba(124, 124, 124, 0.3); outline-color: transparent; }
+.monaco-editor .finish-snippet-placeholder { background-color: transparent; outline-color: #525252; }
+
+.mtk1 { color: #d4d4d4; }
+.mtk2 { color: #1e1e1e; }
+.mtk3 { color: #cc6666; }
+.mtk4 { color: #9cdcfe; }
+.mtk5 { color: #ce9178; }
+.mtk6 { color: #b5cea8; }
+.mtk7 { color: #608b4e; }
+.mtk8 { color: #569cd6; }
+.mtk9 { color: #dcdcdc; }
+.mtk10 { color: #808080; }
+.mtk11 { color: #f44747; }
+.mtk12 { color: #c586c0; }
+.mtk13 { color: #a79873; }
+.mtk14 { color: #dd6a6f; }
+.mtk15 { color: #5bb498; }
+.mtk16 { color: #909090; }
+.mtk17 { color: #778899; }
+.mtk18 { color: #ff00ff; }
+.mtk19 { color: #b46695; }
+.mtk20 { color: #ff0000; }
+.mtk21 { color: #4f76ac; }
+.mtk22 { color: #3dc9b0; }
+.mtk23 { color: #74b0df; }
+.mtk24 { color: #4864aa; }
+.mtki { font-style: italic; }
+.mtkb { font-weight: bold; }
+.mtku { text-decoration: underline; text-underline-position: under; }</style><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f61 { height: 24px; line-height: 22px; font-size: 14px; padding-right: 7px;}
+		.monaco-editor .codelens-decoration._ee1f61 > a > .codicon { line-height: 22px; font-size: 14px; }
+		</style><script async="async" type="text/javascript" src="./📝JS NotesEditor_LakshayKhandelwal_files/tsMode.js.download"></script><script async="async" type="text/javascript" src="./📝JS NotesEditor_LakshayKhandelwal_files/javascript.js.download"></script><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f62 { height: 24px; line-height: 22px; font-size: 14px; padding-right: 7px;}
+		.monaco-editor .codelens-decoration._ee1f62 > a > .codicon { line-height: 22px; font-size: 14px; }
+		</style><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f63 { height: 24px; line-height: 22px; font-size: 14px; padding-right: 7px;}
+		.monaco-editor .codelens-decoration._ee1f63 > a > .codicon { line-height: 22px; font-size: 14px; }
+		</style><style type="text/css" media="screen">
+		.monaco-editor .codelens-decoration._ee1f64 { height: 24px; line-height: 22px; font-size: 14px; padding-right: 7px;}
+		.monaco-editor .codelens-decoration._ee1f64 > a > .codicon { line-height: 22px; font-size: 14px; }
+		</style></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"><div><div class="cell-list"><div class="add-cell false"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="text-editor card"><div class="card-content"><div class="wmde-markdown wmde-markdown-color "><p>Click to edit</p></div></div></div><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="action-bar-wrapper"><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="react-resizable" style="height: 300px;"><div style="height: calc(100% - 10px); display: flex; flex-direction: row;"><div class="resize-horizontal react-resizable" style="width: 1152px;"><div class="editor-wrapper"><button class="button button-format is-primary is-small">Format</button><section style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"><div data-keybinding-context="1" data-mode-id="javascript" style="width: 100%;"><div class="monaco-editor no-user-select  showDeprecated vs-dark" role="code" data-uri="inmemory://model/4" style="width: 1142px; height: 290px;"><div data-mprt="3" class="overflow-guard" style="width: 1142px; height: 290px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 290px; width: 36px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 290px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 36px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; height: 290px;"><div style="position:absolute;top:0px;width:100%;height:22px;"><div class="line-numbers" style="left:0px;width:26px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs-dark" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 36px; height: 290px; width: 1106px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 1106px;"><div style="position:absolute;top:0px;width:100%;height:22px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; width: 1106px; height: 290px;"><div style="top:0px;height:22px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 22px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; display: block; visibility: hidden; width: 1.6px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 1092px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 1092px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="17" height="362" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 290px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 290px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 290px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 1142px;"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; top: 0px; left: 36px; width: 1px; height: 1px;"></textarea><div class="monaco-editor-background textAreaCover line-numbers" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 1142px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 290px;"><div class="minimap-shadow-hidden" style="height: 290px;"></div><canvas width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><canvas class="minimap-decorations-layer" width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(37, 37, 38); box-shadow: rgb(0, 0, 0) 0px 2px 8px; color: rgb(204, 204, 204); position: absolute; visibility: hidden; max-width: 1536px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; background-color: rgb(60, 60, 60); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 12.8px;">Enter to Rename, Shift+Enter to Preview</div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></section></div><span class="react-resizable-handle react-resizable-handle-e"></span></div><div class="progress-wrapper"><div class="preview-wrapper"><iframe title="preview" sandbox="allow-scripts" src="./📝JS NotesEditor_LakshayKhandelwal_files/saved_resource.html"></iframe></div></div></div><span class="react-resizable-handle react-resizable-handle-s"></span></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="action-bar-wrapper"><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="react-resizable" style="height: 300px;"><div style="height: calc(100% - 10px); display: flex; flex-direction: row;"><div class="resize-horizontal react-resizable" style="width: 1152px;"><div class="editor-wrapper"><button class="button button-format is-primary is-small">Format</button><section style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"><div data-keybinding-context="1" data-mode-id="javascript" style="width: 100%;"><div class="monaco-editor no-user-select  showDeprecated vs-dark" role="code" data-uri="inmemory://model/3" style="width: 1142px; height: 290px;"><div data-mprt="3" class="overflow-guard" style="width: 1142px; height: 290px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 290px; width: 36px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 290px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 36px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; height: 290px;"><div style="position:absolute;top:0px;width:100%;height:22px;"><div class="line-numbers" style="left:0px;width:26px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs-dark" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 36px; height: 290px; width: 1106px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 1106px;"><div style="position:absolute;top:0px;width:100%;height:22px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; width: 1106px; height: 290px;"><div style="top:0px;height:22px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 22px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; display: block; visibility: hidden; width: 1.6px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 1092px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 1092px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="17" height="362" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 290px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 290px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 290px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 1142px;"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; top: 0px; left: 36px; width: 1px; height: 1px;"></textarea><div class="monaco-editor-background textAreaCover line-numbers" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 1142px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 290px;"><div class="minimap-shadow-hidden" style="height: 290px;"></div><canvas width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><canvas class="minimap-decorations-layer" width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(37, 37, 38); box-shadow: rgb(0, 0, 0) 0px 2px 8px; color: rgb(204, 204, 204); position: absolute; visibility: hidden; max-width: 1536px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; background-color: rgb(60, 60, 60); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 12.8px;">Enter to Rename, Shift+Enter to Preview</div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></section></div><span class="react-resizable-handle react-resizable-handle-e"></span></div><div class="progress-wrapper"><div class="preview-wrapper"><iframe title="preview" sandbox="allow-scripts" src="./📝JS NotesEditor_LakshayKhandelwal_files/saved_resource(1).html"></iframe></div></div></div><span class="react-resizable-handle react-resizable-handle-s"></span></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="action-bar-wrapper"><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="react-resizable" style="height: 300px;"><div style="height: calc(100% - 10px); display: flex; flex-direction: row;"><div class="resize-horizontal react-resizable" style="width: 1152px;"><div class="editor-wrapper"><button class="button button-format is-primary is-small">Format</button><section style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"><div style="width: 100%;" data-keybinding-context="1" data-mode-id="javascript"><div class="monaco-editor no-user-select  showDeprecated vs-dark" role="code" data-uri="inmemory://model/1" style="width: 1142px; height: 290px;"><div data-mprt="3" class="overflow-guard" style="width: 1142px; height: 290px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 290px; width: 36px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 290px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 36px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; height: 290px;"><div style="position:absolute;top:0px;width:100%;height:22px;"><div class="line-numbers" style="left:0px;width:26px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs-dark" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 36px; height: 290px; width: 1106px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 1106px;"><div style="position:absolute;top:0px;width:100%;height:22px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; width: 1106px; height: 290px;"><div style="top:0px;height:22px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 22px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; display: block; visibility: hidden; width: 1.6px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 1092px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 1092px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="17" height="362" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 290px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 290px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 290px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 1142px;"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; top: 0px; left: 36px; width: 1px; height: 1px;"></textarea><div class="monaco-editor-background textAreaCover line-numbers" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 1142px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 290px;"><div class="minimap-shadow-hidden" style="height: 290px;"></div><canvas width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><canvas class="minimap-decorations-layer" width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(37, 37, 38); box-shadow: rgb(0, 0, 0) 0px 2px 8px; color: rgb(204, 204, 204); position: absolute; visibility: hidden; max-width: 1536px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; background-color: rgb(60, 60, 60); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 12.8px;">Enter to Rename, Shift+Enter to Preview</div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></section></div><span class="react-resizable-handle react-resizable-handle-e"></span></div><div class="progress-wrapper"><div class="preview-wrapper"><iframe title="preview" sandbox="allow-scripts" src="./📝JS NotesEditor_LakshayKhandelwal_files/saved_resource(2).html"></iframe></div></div></div><span class="react-resizable-handle react-resizable-handle-s"></span></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="text-editor card"><div class="card-content"><div class="wmde-markdown wmde-markdown-color "><p>Click to edit</p></div></div></div><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div><div class="cell-list-item"><div class="action-bar-wrapper"><div class="action-bar"><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-up"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-arrow-down"></i></span></button><button class="button is-primary is-small"><span class="icon"><i class="fas fa-times"></i></span></button></div></div><div class="react-resizable" style="height: 300px;"><div style="height: calc(100% - 10px); display: flex; flex-direction: row;"><div class="resize-horizontal react-resizable" style="width: 1152px;"><div class="editor-wrapper"><button class="button button-format is-primary is-small">Format</button><section style="display: flex; position: relative; text-align: initial; width: 100%; height: 100%;"><div style="width: 100%;" data-keybinding-context="1" data-mode-id="javascript"><div class="monaco-editor no-user-select  showDeprecated vs-dark" role="code" data-uri="inmemory://model/2" style="width: 1142px; height: 290px;"><div data-mprt="3" class="overflow-guard" style="width: 1142px; height: 290px;"><div class="margin" role="presentation" aria-hidden="true" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; height: 290px; width: 36px;"><div class="glyph-margin" style="left: 0px; width: 0px; height: 290px;"></div><div class="margin-view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="margin-view-overlays" role="presentation" aria-hidden="true" style="position: absolute; width: 36px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; height: 290px;"><div style="position:absolute;top:0px;width:100%;height:22px;"><div class="line-numbers" style="left:0px;width:26px;">1</div></div></div></div><div class="monaco-scrollable-element editor-scrollable vs-dark" role="presentation" data-mprt="5" style="position: absolute; overflow: hidden; left: 36px; height: 290px; width: 1106px;"><div class="lines-content monaco-editor-background" style="position: absolute; overflow: hidden; width: 1e+06px; height: 1e+06px; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; left: 0px;"><div class="view-overlays" role="presentation" aria-hidden="true" style="position: absolute; height: 0px; width: 1106px;"><div style="position:absolute;top:0px;width:100%;height:22px;"></div></div><div role="presentation" aria-hidden="true" class="view-rulers"></div><div class="view-zones" role="presentation" aria-hidden="true" style="position: absolute;"></div><div class="view-lines monaco-mouse-cursor-text" role="presentation" aria-hidden="true" data-mprt="7" style="position: absolute; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; width: 1106px; height: 290px;"><div style="top:0px;height:22px;" class="view-line"><span><span></span></span></div></div><div data-mprt="1" class="contentWidgets" style="position: absolute; top: 0px;"></div><div role="presentation" aria-hidden="true" class="cursors-layer cursor-line-style cursor-solid"><div class="cursor monaco-mouse-cursor-text " style="height: 22px; top: 0px; left: 0px; font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; display: block; visibility: hidden; width: 1.6px;"></div></div></div><div role="presentation" aria-hidden="true" class="invisible scrollbar horizontal" style="position: absolute; width: 1092px; height: 12px; left: 0px; bottom: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; height: 12px; transform: translate3d(0px, 0px, 0px); contain: strict; width: 1092px;"></div></div><canvas class="decorationsOverviewRuler" aria-hidden="true" width="17" height="362" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; top: 0px; right: 0px; width: 14px; height: 290px;"></canvas><div role="presentation" aria-hidden="true" class="invisible scrollbar vertical" style="position: absolute; width: 14px; height: 290px; right: 0px; top: 0px;"><div class="slider" style="position: absolute; top: 0px; left: 0px; width: 14px; transform: translate3d(0px, 0px, 0px); contain: strict; height: 290px;"></div></div></div><div role="presentation" aria-hidden="true" style="width: 1142px;"></div><textarea data-mprt="6" class="inputarea monaco-mouse-cursor-text" wrap="off" autocorrect="off" autocapitalize="off" autocomplete="off" spellcheck="false" aria-label="Editor content;Press Alt+F1 for Accessibility Options." tabindex="0" role="textbox" aria-roledescription="editor" aria-multiline="true" aria-haspopup="false" aria-autocomplete="both" style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; font-feature-settings: &quot;liga&quot; 0, &quot;calt&quot; 0; line-height: 22px; letter-spacing: 0px; top: 0px; left: 36px; width: 1px; height: 1px;"></textarea><div class="monaco-editor-background textAreaCover line-numbers" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px;"></div><div data-mprt="4" class="overlayWidgets" style="width: 1142px;"><div class="accessibilityHelpWidget" role="dialog" aria-hidden="true" widgetid="editor.contrib.accessibilityHelpWidget" style="display: none; position: absolute;"><div role="document"></div></div><div widgetid="editor.contrib.quickInputWidget" style="position: absolute; top: 0px; right: 50%;"></div></div><div data-mprt="8" class="minimap slider-mouseover" role="presentation" aria-hidden="true" style="position: absolute; left: 0px; width: 0px; height: 290px;"><div class="minimap-shadow-hidden" style="height: 290px;"></div><canvas width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><canvas class="minimap-decorations-layer" width="0" height="362" style="position: absolute; left: 0px; width: 0px; height: 290px;"></canvas><div class="minimap-slider" style="position: absolute; transform: translate3d(0px, 0px, 0px); contain: strict; width: 0px;"><div class="minimap-slider-horizontal" style="position: absolute; width: 0px; height: 0px;"></div></div></div></div><div data-mprt="2" class="overflowingContentWidgets"><div class="monaco-editor rename-box" widgetid="__renameInputWidget" style="background-color: rgb(37, 37, 38); box-shadow: rgb(0, 0, 0) 0px 2px 8px; color: rgb(204, 204, 204); position: absolute; visibility: hidden; max-width: 1536px;"><input class="rename-input" type="text" aria-label="Rename input. Type new name and press Enter to commit." style="font-family: Consolas, &quot;Courier New&quot;, monospace; font-weight: normal; font-size: 16px; background-color: rgb(60, 60, 60); border-width: 0px; border-style: none;"><div class="rename-label" style="font-size: 12.8px;">Enter to Rename, Shift+Enter to Preview</div></div></div><div class="context-view" aria-hidden="true" style="display: none;"></div></div></div></section></div><span class="react-resizable-handle react-resizable-handle-e"></span></div><div class="progress-wrapper"><div class="preview-wrapper"><iframe title="preview" sandbox="allow-scripts" src="./📝JS NotesEditor_LakshayKhandelwal_files/saved_resource(3).html"></iframe></div></div></div><span class="react-resizable-handle react-resizable-handle-s"></span></div></div><div class="add-cell undefined"><div class="add-buttons"><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Code</span></button><button class="button is-rounded is-primary is-small"><span class="icon is-small"><i class="fas fa-plus"></i></span><span>Text</span></button></div><div class="divider"></div></div></div></div></div><script>!function(e){function c(c){for(var f,r,t=c[0],n=c[1],o=c[2],i=0,l=[];i<t.length;i++)r=t[i],Object.prototype.hasOwnProperty.call(b,r)&&b[r]&&l.push(b[r][0]),b[r]=0;for(f in n)Object.prototype.hasOwnProperty.call(n,f)&&(e[f]=n[f]);for(u&&u(c);l.length;)l.shift()();return d.push.apply(d,o||[]),a()}function a(){for(var e,c=0;c<d.length;c++){for(var a=d[c],f=!0,t=1;t<a.length;t++){var n=a[t];0!==b[n]&&(f=!1)}f&&(d.splice(c--,1),e=r(r.s=a[0]))}return e}var f={},b={469:0},d=[];function r(c){if(f[c])return f[c].exports;var a=f[c]={i:c,l:!1,exports:{}};return e[c].call(a.exports,a,a.exports,r),a.l=!0,a.exports}r.e=function(e){var c=[],a=b[e];if(0!==a)if(a)c.push(a[2]);else{var f=new Promise((function(c,f){a=b[e]=[c,f]}));c.push(a[2]=f);var d,t=document.createElement("script");t.charset="utf-8",t.timeout=120,r.nc&&t.setAttribute("nonce",r.nc),t.src=function(e){return r.p+"static/js/"+({}[e]||e)+"."+{0:"d0ec037b",1:"ba4b5555",2:"fc0ec78e",3:"1a7b5dd7",4:"9f21bcc8",5:"214e813f",6:"e6aef951",7:"a4cf72e5",8:"495fe6bc",9:"8b5f0a2c",10:"6c3f81e4",11:"8ade76ce",12:"879991a2",13:"fdc67ed2",14:"3fa9cb18",15:"9c9cb8bf",16:"b29fd51e",17:"6aab655d",18:"677e4fdd",19:"59c2221c",20:"1722f83e",21:"8d2899f7",22:"d7dc6eca",23:"a491bf95",24:"b2187336",25:"15646537",26:"d299efbc",27:"d03e3e34",28:"4cc64a28",29:"7bcf597f",30:"48314231",31:"b68688da",32:"045c3c64",33:"22e6a194",34:"b7af2839",35:"c073b308",36:"28a5b3e7",37:"61a8c482",38:"49a84e23",39:"a7668906",40:"26556b3e",41:"d37888a1",42:"060e22f1",43:"97af0081",44:"94b81cc9",45:"8d01663b",46:"d1b03ad2",47:"0e006b89",48:"d092c971",49:"d3e46dc9",50:"058b759b",51:"38be1616",52:"5dadc901",53:"2d5b5c81",54:"49bd0387",55:"4f4f645d",56:"c5be78c0",57:"0169f5ec",58:"353cbd3d",59:"74d6162b",60:"71fb4abd",61:"b8bed8f0",62:"df6bfe8a",63:"b552d184",64:"54ad86ad",65:"fcb50db4",66:"958de37d",67:"df2db2ae",68:"d1a21a57",69:"b0d5b767",70:"77a09193",71:"d23efcf1",72:"180d5e15",73:"28fea6d0",74:"e943df44",75:"79582344",76:"debdc341",77:"92c96c3d",78:"9e0d7f80",79:"d0f6c9fd",80:"84e87729",81:"6776021c",82:"8c4bda0c",83:"749f4119",84:"aa123288",85:"01966d83",86:"7c7885c7",87:"0c727bd6",88:"2187f661",89:"73959658",90:"c1aba9a5",91:"a88bb761",92:"63bbf217",93:"e2e51668",94:"07cb4c38",95:"6b25c7db",96:"1db66a12",97:"f8e8d280",98:"66a4346a",99:"f015cd11",100:"2bb93049",101:"190cc1d9",102:"9b9e0577",103:"ed3a91a2",104:"5844114d",105:"691170a5",106:"e201c6c5",107:"e2d6a84d",108:"9dc14030",109:"af23e916",110:"f645098e",111:"f11560e3",112:"232e75dc",113:"3fda73e6",114:"7e9d9e36",115:"24f3cf49",116:"5d7d552f",117:"e63201bf",118:"bc6c0260",119:"0784c3b9",120:"2b2534a4",121:"72621841",122:"87a33eb8",123:"e831021b",124:"049a7ecc",125:"033e382b",126:"89b686a8",127:"2eca41c1",128:"867203a8",129:"5df422c9",130:"82a279b0",131:"2051c663",132:"936eb31c",133:"65208d3e",134:"63327805",135:"ffbf52bd",136:"cc53bf28",137:"bfb4a7b6",138:"49ae3534",139:"fadd05d2",140:"d942a8e9",141:"c515b73c",142:"6ab8da88",143:"dfc45056",144:"f990e622",145:"cfb38f1d",146:"2a516f77",147:"3469a9d8",148:"c4e91fb0",149:"8189574b",150:"7e9c397e",151:"996e178d",152:"37ad1201",153:"724e0bae",154:"eb197bd3",155:"3679d7a2",156:"b0382972",157:"43531ce3",158:"16f50990",159:"5bdf4e3e",160:"d57d49d0",161:"12c283e1",162:"c72f3513",163:"6d912881",164:"d5f49bec",165:"1e9d5c36",166:"cc368209",167:"4b857ef1",168:"c32accb5",169:"f4cb4504",170:"532ce4de",171:"f7644013",172:"ff1b0b95",173:"a481d683",174:"4de6b014",175:"8629ac52",176:"c3f8debe",177:"711634a3",178:"4b6801a4",179:"9fd6382d",180:"1fe708d2",181:"f17a285e",182:"31d3d5e1",183:"7cab6fe8",184:"3a494425",185:"bc77779c",186:"a13a13b8",187:"e5b8f156",188:"1849dd63",189:"4a780305",190:"9af2cb96",191:"42e13a1e",192:"b10e91ff",193:"309c3a0f",194:"a4312414",195:"16fa8264",196:"6b3faf03",197:"58268d75",198:"27bd5fcd",199:"8dc8509d",200:"06c340a4",201:"af45e682",202:"5181fe9d",203:"24e789df",204:"5a0c35a0",205:"c94355ef",206:"2b83d5b4",207:"282a1c59",208:"6bcefc97",209:"3d12650b",210:"9ee5d0f6",211:"52a9d319",212:"41b94bda",213:"746c1912",214:"0ad7cc45",215:"fa78288a",216:"bd8f166c",217:"0c494684",218:"c662dcc1",219:"4be66a14",220:"92960c25",221:"7e264c5f",222:"9b873384",223:"efe899c5",224:"5657e305",225:"4834a0e0",226:"94296961",227:"90df0908",228:"7384c6f7",229:"f9f5b380",230:"6f795e1d",231:"01cc0c18",232:"b9678715",233:"93411828",234:"f8bedf66",235:"a75ff965",236:"a04cbcf2",237:"c342e988",238:"a740d666",239:"893c6d89",240:"91b98995",241:"08bd6bc4",242:"bbe11889",243:"537ca8b1",244:"fab6a9da",245:"27b6ea96",246:"d95bb205",247:"6072b26a",248:"32524a7d",249:"6915bef8",250:"4f5ca850",251:"479e7327",252:"2dbf98ab",253:"e2e17dc3",254:"364ca58a",255:"441aad0f",256:"8ad9c971",257:"25b41d82",258:"fd10b33f",259:"ad85f724",260:"14ead8e2",261:"fb7047aa",262:"28301e1a",263:"a0547d38",264:"d2f7fb2b",265:"f5ae9a2e",266:"f0e54a6f",267:"57eabbbc",268:"b905591f",269:"f3056c8f",270:"0de29940",271:"62b3c0c8",272:"400e029d",273:"7e202c73",274:"fc5f2798",275:"86211656",276:"af40c356",277:"c9c3c93d",278:"1911c37b",279:"e165c5ab",280:"fbf67440",281:"d49347cf",282:"bc597032",283:"acefd37a",284:"09adcb8b",285:"f28755f5",286:"2ee9e8a1",287:"eda252b7",288:"38a1ec4d",289:"602a2912",290:"9c5e9428",291:"96170d80",292:"d267cd96",293:"7bc6e247",294:"3a20e8fe",295:"3bc51896",296:"08cf58fa",297:"5b454454",298:"fb3a629d",299:"6db90681",300:"3df9fb61",301:"5975522d",302:"69f1f134",303:"01f3903c",304:"563d06ab",305:"f77b9757",306:"40c9686a",307:"0fbaf2ba",308:"e1069382",309:"f0ff3d69",310:"00d508f3",311:"9391fb59",312:"213e9991",313:"dce18bea",314:"2950bc9d",315:"ae577852",316:"0474e9e5",317:"1d2bcc7f",318:"62db6c5d",319:"ed55b859",320:"4105ba7a",321:"bd43faa8",322:"4599c6f5",323:"5e40a58e",324:"720282af",325:"0f1e4657",326:"dc79c886",327:"89637b3e",328:"43fa1e7d",329:"5e4ea5bc",330:"6aac5537",331:"ed5f0cdb",332:"8b6327b9",333:"db2b96a0",334:"59852bb6",335:"3941ed03",336:"14906743",337:"ce344199",338:"0ede7f78",339:"02c51977",340:"46254a0c",341:"d03681cc",342:"4f15a24f",343:"51248f17",344:"61682a9b",345:"841b433a",346:"12725ba1",347:"1fc6a804",348:"c6c9cbf8",349:"22ac0064",350:"1afa47b1",351:"fb617fd0",352:"eee1a703",353:"a6da36b0",354:"e0c8f85c",355:"7806e22b",356:"fac70db7",357:"4ffacd1f",358:"642bc19f",359:"a1423e4d",360:"39ec340f",361:"ac03e90b",362:"184a7573",363:"ba286a74",364:"e2cab028",365:"fd26688e",366:"a50540eb",367:"2456bebc",368:"7e0714ad",369:"93eaadae",370:"f2e74fea",371:"cc9eaccc",372:"cca6ab17",373:"9cc44b7f",374:"b5f21f6c",375:"08ac474b",376:"47df524b",377:"0a90b761",378:"7076de0e",379:"75c7e909",380:"cbf875a7",381:"90cb8e9b",382:"efca9a83",383:"0f72d3e2",384:"5c67fa3c",385:"1867afbc",386:"880b0a01",387:"ba24b0a0",388:"4e92742b",389:"000dca1d",390:"b517b395",391:"85fadf32",392:"8a329eae",393:"6c60da9c",394:"3e6c5fd5",395:"65f9393a",396:"904b6594",397:"f1ae67be",398:"ae7f334b",399:"16cc9d7f",400:"7f857333",401:"c36212b1",402:"4577ebfb",403:"ecda78c6",404:"79806b8a",405:"7c38b57b",406:"f15e6f34",407:"7b0affd1",408:"5ae07295",409:"965fcdd9",410:"76823b1d",411:"7092c671",412:"c2b5b9ea",413:"4769aee2",414:"64f8cfb2",415:"a53794bd",416:"ab3ccb87",417:"18330e94",418:"0aa7b7f2",419:"56883c9f",420:"1ad05946",421:"7ecd3660",422:"431c7e3d",423:"7ca4d84a",424:"2180a7be",425:"95e92dcd",426:"902e87c5",427:"f8893966",428:"5e481423",429:"bc88a520",430:"0299d072",431:"2f2dcf5c",432:"81484eb1",433:"2445be2b",434:"4f561564",435:"c574a963",436:"33313f51",437:"4164e331",438:"7e868a5c",439:"3fc0796b",440:"f36cfeb7",441:"c4d03218",442:"57da8624",443:"593efa3b",444:"747f8383",445:"3b4916c2",446:"d50bf33c",447:"5c3eef61",448:"ca43f83b",449:"a7164e3e",450:"8e3d5e4d",451:"7e125e3e",452:"e6be5c9f",453:"7f9d331e",454:"4f13f731",455:"d82ff7c6",456:"f2d5f036",457:"52a3b54c",458:"dd3a14c2",459:"d19d2692",460:"31989d4c",461:"74e03896",462:"7c250b56",463:"7bcac0f7",464:"6a46c8a1",465:"6e7d7d7c",466:"7d30cc18",467:"74ff5f7a"}[e]+".chunk.js"}(e);var n=new Error;d=function(c){t.onerror=t.onload=null,clearTimeout(o);var a=b[e];if(0!==a){if(a){var f=c&&("load"===c.type?"missing":c.type),d=c&&c.target&&c.target.src;n.message="Loading chunk "+e+" failed.\n("+f+": "+d+")",n.name="ChunkLoadError",n.type=f,n.request=d,a[1](n)}b[e]=void 0}};var o=setTimeout((function(){d({type:"timeout",target:t})}),12e4);t.onerror=t.onload=d,document.head.appendChild(t)}return Promise.all(c)},r.m=e,r.c=f,r.d=function(e,c,a){r.o(e,c)||Object.defineProperty(e,c,{enumerable:!0,get:a})},r.r=function(e){"undefined"!=typeof Symbol&&Symbol.toStringTag&&Object.defineProperty(e,Symbol.toStringTag,{value:"Module"}),Object.defineProperty(e,"__esModule",{value:!0})},r.t=function(e,c){if(1&c&&(e=r(e)),8&c)return e;if(4&c&&"object"==typeof e&&e&&e.__esModule)return e;var a=Object.create(null);if(r.r(a),Object.defineProperty(a,"default",{enumerable:!0,value:e}),2&c&&"string"!=typeof e)for(var f in e)r.d(a,f,function(c){return e[c]}.bind(null,f));return a},r.n=function(e){var c=e&&e.__esModule?function(){return e.default}:function(){return e};return r.d(c,"a",c),c},r.o=function(e,c){return Object.prototype.hasOwnProperty.call(e,c)},r.p="/",r.oe=function(e){throw console.error(e),e};var t=this.webpackJsonpjbook=this.webpackJsonpjbook||[],n=t.push.bind(t);t.push=c,t=t.slice();for(var o=0;o<t.length;o++)c(t[o]);var u=n;a()}([])</script><script src="./📝JS NotesEditor_LakshayKhandelwal_files/470.d30e07b8.chunk.js.download"></script><script src="./📝JS NotesEditor_LakshayKhandelwal_files/main.fd758a93.chunk.js.download"></script><script src="./📝JS NotesEditor_LakshayKhandelwal_files/loader.js.download"></script><script>
+      require.config({"paths":{"vs":"https://cdn.jsdelivr.net/npm/monaco-editor@0.21.2/min/vs"}});
+      require(['vs/editor/editor.main'], function() {
+        document.dispatchEvent(new Event('monaco_init'));
+      });
+    </script><div class="monaco-aria-container"><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-alert" role="alert" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div><div class="monaco-status" role="complementary" aria-live="polite" aria-atomic="true"></div></div></body></html>
